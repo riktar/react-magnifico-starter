@@ -1,6 +1,6 @@
-import Home from "../pages/home/Home";
+import Home from "../pages/home";
 
-const routes: [{ path: string, component: object }] = [
+const routes: [{ path: string, component: React.FC | React.Component }] = [
   {
     path: '/',
     component: Home

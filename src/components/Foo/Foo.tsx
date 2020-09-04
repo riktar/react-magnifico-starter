@@ -1,10 +1,13 @@
 import React from 'react';
 
+interface Props {
+  bar: string;
+}
 
-function Foo(props: { bar: string }) {
+const Foo: React.FC<Props> = ({bar}: Props) => {
   return (
     <>
-      <span>{props.bar}</span>
+      <span>{bar}</span>
     </>
   );
 }
