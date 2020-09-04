@@ -3,7 +3,8 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Http404 from "./pages/http404";
 import routes from "./config/routes";
 
-const Router = () => {
+
+const App = () => {
   const routeComponents = routes.map(({path, component}, key) => {
     return (<Route exact path={path} key={key}>{component}</Route>)
   })
@@ -20,4 +21,4 @@ const Router = () => {
 }
 
 
-export default Router
+export default App

@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
-import Router from "./router";
+import App from "./App";
 import "./tailwind.output.css"
+import {Provider, rootStore} from "./models/Root";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router/>
-  </React.StrictMode>,
+  <Provider value={rootStore({})}>
+    <App/>
+  </Provider>,
   document.getElementById('root')
 );
 
