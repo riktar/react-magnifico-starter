@@ -1,6 +1,6 @@
 import {types} from "mobx-state-tree";
 
-export const Counter = types
+const Counter = types
   .model({
     count: types.number
   })
@@ -12,3 +12,5 @@ export const Counter = types
       self.count--;
     }
   }));
+
+export default Counter
