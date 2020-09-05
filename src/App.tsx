@@ -4,7 +4,7 @@ import Http404 from "./pages/http404";
 import routes from "./config/routes";
 
 
-const App = () => {
+const App: React.FC = () => {
   const routeComponents = routes.map(({path, component}, key) => {
     return (<Route exact path={path} key={key}>{component}</Route>)
   })

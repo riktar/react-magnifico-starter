@@ -1,11 +1,9 @@
 import React from "react";
 import {observer} from "mobx-react-lite";
-import {useStore} from "../models/Root";
+import {useStore} from "../models/Store";
 
-interface Props {
-}
 
-const CounterShared: React.FC<Props> = observer(() => {
+const CounterShared: React.FC = observer(() => {
   const {counter} = useStore();
 
   return (

@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import App from "./App";
 import "./tailwind.output.css"
-import {Provider, rootStore} from "./models/Root";
+import {Provider, createStore} from "./models/Store";
+import {RootModel, snapshot} from "./models/Root";
+
+const store = createStore(RootModel, snapshot, {})
 
 ReactDOM.render(
-  <Provider value={rootStore({})}>
+  <Provider value={store}>
     <App/>
   </Provider>,
   document.getElementById('root')

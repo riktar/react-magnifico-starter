@@ -1,28 +1,14 @@
-import {createContext, useContext} from "react";
-import {Instance, types} from "mobx-state-tree";
-import Counter from './Counter';
+import {types} from "mobx-state-tree";
+import Counter from "./Counter";
 
-const RootModel = types.model({
+// Root Model
+export const RootModel = types.model({
   counter: Counter,
 });
 
-export const rootStore = (objToInject: any) => RootModel.create({
+// Initial Snapshot
+export const snapshot = {
   counter: {
     count: 0
   }
-}, objToInject);
-
-// onSnapshot(rootStore, snapshot => console.log("Snapshot: ", snapshot));
-
-export type RootInstance = Instance<typeof RootModel>;
-const RootStoreContext = createContext<null | RootInstance>(null);
-
-export const Provider = RootStoreContext.Provider;
-
-export const useStore = () => {
-  const store = useContext(RootStoreContext);
-  if (store === null) {
-    throw new Error("Store cannot be null, please add a context provider");
-  }
-  return store;
 }
