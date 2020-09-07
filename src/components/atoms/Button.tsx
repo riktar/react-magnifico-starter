@@ -23,8 +23,8 @@ const Button: React.FC<Props> = ({
                                    ...props
                                  }) => {
   return (
-    <button onClick={props.onClick} style={{...props.style, 'transition': 'all .15s ease'}}
-            className={classnames(`font-bold py-3 px-6 uppercase mr-1 mb-1 outline-none focus:outline-none ${props.className}`, {
+    <button onClick={props.onClick} style={{'transition': 'all .15s ease', ...props.style}}
+            className={classnames(`font-bold py-3 px-6 uppercase outline-none focus:outline-none ${props.className}`, {
               "hover:bg-gray-200 active:bg-gray-300": variant === 'text',
               "text-primary-500": variant === 'text' && color === 'primary',
               "text-secondary-500": variant === 'text' && color === 'secondary',

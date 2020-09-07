@@ -1,5 +1,4 @@
-const { colors } = require("tailwindcss/defaultTheme");
-
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   purge: [
@@ -10,8 +9,8 @@ module.exports = {
     'public/**/*.html',
   ],
   theme: {
-    colors:{
-      ...colors,
+    colors: {
+      ...defaultTheme.colors,
       primary: {
         100: '#ac50ff',
         200: '#9c2eff',
@@ -35,11 +34,16 @@ module.exports = {
         900: '#003228'
       }
     },
-    extend: {}
+    extend: {
+      fontFamily: {
+        heading: ["Poppins", "sans-serif"],
+        body: ["Overpass, Noto Color Emoji", "sans-serif"]
+      }
+    }
   },
   variants: {
     backgroundColor: ['responsive', 'hover', 'focus', 'active'],
     textColor: ['responsive', 'hover', 'focus', 'active'],
   },
   plugins: []
-};
+}

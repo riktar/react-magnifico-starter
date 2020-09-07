@@ -1,11 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;700');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply text-gray-700 font-light text-base /*font-body*/
+}
+
 a, button {
   @apply outline-none
 }
-a:focus, button:focus{
+
+a:focus, button:focus {
   @apply outline-none
 }
 
@@ -14,7 +22,7 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply font-normal leading-normal mt-0 mb-2
+  @apply font-normal leading-normal mt-0 mb-2 /*font-heading*/
 }
 
 h1 {

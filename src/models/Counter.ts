@@ -10,7 +10,11 @@ const Counter = types
     },
     decrement() {
       self.count--;
+    },
+    reset() {
+      self.count = 0
     }
   }));
+
 
 export default Counter
