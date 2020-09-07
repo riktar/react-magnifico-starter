@@ -5,13 +5,14 @@ import routes from "./config/routes";
 
 
 const App: React.FC = () => {
-  const routeComponents = routes.map(({path, component}, key) => {
-    return (<Route exact path={path} key={key}>{component}</Route>)
-  })
   return (
     <BrowserRouter>
       <Switch>
-        {routeComponents}
+        {
+          routes.map(({path, component}, key) => {
+            return (<Route exact path={path} key={key}>{component}</Route>)
+          })
+        }
         <Route path="*">
           <Http404/>
         </Route>

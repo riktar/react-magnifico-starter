@@ -1,14 +1,15 @@
+import React from "react";
 import Home from "../pages/home";
 import About from "../pages/about";
 
 const routes = [
   {
     path: '/',
-    component: Home
+    component: <Home />
   },
   {
     path: '/about',
-    component: About
+    component: <About />
   }
 ]
 

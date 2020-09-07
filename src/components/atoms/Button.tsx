@@ -6,8 +6,11 @@ interface Props {
   size?: string
   color?: string,
   variant?: string,
+  rounded?: boolean,
+  shadow?: boolean,
   className?: string,
   onClick?: any,
+  style?: any,
   children: any
 }
 
@@ -15,11 +18,13 @@ const Button: React.FC<Props> = ({
                                    size = 'md',
                                    color = 'default',
                                    variant = 'text',
+                                   shadow = false,
+                                   rounded = false,
                                    ...props
                                  }) => {
   return (
-    <button onClick={props.onClick}
-            className={classnames(`box-border outline-none focus:outline-none ${props.className}`, {
+    <button onClick={props.onClick} style={{...props.style, 'transition': 'all .15s ease'}}
+            className={classnames(`font-bold py-3 px-6 uppercase mr-1 mb-1 outline-none focus:outline-none ${props.className}`, {
               "hover:bg-gray-200 active:bg-gray-300": variant === 'text',
               "text-primary-500": variant === 'text' && color === 'primary',
               "text-secondary-500": variant === 'text' && color === 'secondary',
@@ -27,12 +32,12 @@ const Button: React.FC<Props> = ({
               "text-yellow-500": variant === 'text' && color === 'warning',
               "text-red-500": variant === 'text' && color === 'error',
 
-              "border-2 active:bg-gray-300": variant === 'bordered',
-              "border-primary-500 text-primary-500": variant === 'bordered' && color === 'primary',
-              "border-secondary-500 text-secondary-500": variant === 'bordered' && color === 'secondary',
-              "border-green-500 text-green-500": variant === 'bordered' && color === 'success',
-              "border-yellow-500 text-yellow-500": variant === 'bordered' && color === 'warning',
-              "border-red-500 text-red-500": variant === 'bordered' && color === 'error',
+              "border-solid border": variant === 'bordered',
+              "border-primary-500 text-primary-500 active:bg-primary-200": variant === 'bordered' && color === 'primary',
+              "border-secondary-500 text-secondary-500 active:bg-secondary-200": variant === 'bordered' && color === 'secondary',
+              "border-green-500 text-green-500 active:bg-green-200": variant === 'bordered' && color === 'success',
+              "border-yellow-500 text-yellow-500 active:bg-yellow-200": variant === 'bordered' && color === 'warning',
+              "border-red-500 text-red-500 active:bg-red-200": variant === 'bordered' && color === 'error',
 
               "bg-primary-500 active:bg-primary-700": variant === 'contained' && color === 'primary',
               "bg-secondary-500 active:bg-secondary-700": variant === 'contained' && color === 'secondary',
@@ -41,10 +46,13 @@ const Button: React.FC<Props> = ({
               "bg-yellow-500 active:bg-yellow-700": variant === 'contained' && color === 'warning',
               "bg-red-500 active:bg-red-700": variant === 'contained' && color === 'error',
 
-              "py-2 px-5 text-base": size === 'md',
-              "py-1 px-3 text-xs": size === 'sm',
-              "py-2 px-5 text-xl": size === 'lg',
-              "py-2 px-5 text-3xl": size === 'xl',
+              "shadow hover:shadow-lg": shadow,
+              "rounded": rounded,
+
+              "text-base": size === 'md',
+              "text-xs": size === 'sm',
+              "text-xl": size === 'lg',
+              "text-3xl": size === 'xl',
             })}>
       {props.children}
     </button>
@@ -56,8 +64,11 @@ Button.propTypes = {
   color: PropTypes.string,
   variant: PropTypes.string,
   className: PropTypes.string,
+  rounded: PropTypes.bool,
+  shadow: PropTypes.bool,
   onClick: PropTypes.func,
-  children: PropTypes.any
+  children: PropTypes.any,
+  style: PropTypes.any,
 }
 
 Button.defaultProps = {}
