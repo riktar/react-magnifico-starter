@@ -1,5 +1,5 @@
 import React from 'react';
-import CounterShared from "../components/CounterShared";
+import CounterShared from "../components/example/CounterShared";
 import {useHistory} from "react-router-dom";
 import {useStore} from "../models/Store";
 import Button from "../components/atoms/Button";
