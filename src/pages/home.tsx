@@ -1,12 +1,8 @@
 import React from 'react';
-import CounterShared from "../components/example/CounterShared";
 import {useHistory} from "react-router-dom";
-import {useStore} from "../models/Store";
-import Button from "../components/atoms/Button";
 
 const Home: React.FC = () => {
   const history = useHistory()
-  const {counter} = useStore()
   return (
     <>
       <div className="flex flex-col h-screen items-center justify-center content-center">
