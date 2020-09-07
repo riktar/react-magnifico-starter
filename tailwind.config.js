@@ -36,7 +36,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        heading: ["Poppins", "sans-serif"],
+        heading: ["Poppins, Noto Color Emoji", "sans-serif"],
         body: ["Overpass, Noto Color Emoji", "sans-serif"]
       }
     }

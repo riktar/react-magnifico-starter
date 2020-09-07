@@ -24,13 +24,15 @@ const Button: React.FC<Props> = ({
                                  }) => {
   return (
     <button onClick={props.onClick} style={{'transition': 'all .15s ease', ...props.style}}
-            className={classnames(`font-bold py-3 px-6 uppercase outline-none focus:outline-none ${props.className}`, {
-              "hover:bg-gray-200 active:bg-gray-300": variant === 'text',
+            className={classnames(`font-bold outline-none focus:outline-none ${props.className}`, {
+              "hover:underline": variant === 'text',
               "text-primary-500": variant === 'text' && color === 'primary',
               "text-secondary-500": variant === 'text' && color === 'secondary',
               "text-green-500": variant === 'text' && color === 'success',
               "text-yellow-500": variant === 'text' && color === 'warning',
               "text-red-500": variant === 'text' && color === 'error',
+
+              "py-3 px-6": variant === 'bordered' || variant === 'contained',
 
               "border-solid border": variant === 'bordered',
               "border-primary-500 text-primary-500 active:bg-primary-200": variant === 'bordered' && color === 'primary',

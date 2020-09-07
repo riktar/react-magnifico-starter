@@ -1,3 +1,4 @@
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700');
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;700');
 
@@ -5,46 +6,48 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply text-gray-700 font-light text-base /*font-body*/
-}
+@layer base {
+  body {
+    @apply text-gray-700 font-light text-base /*font-body*/
+  }
 
-a, button {
-  @apply outline-none
-}
+  a, button {
+    @apply outline-none
+  }
 
-a:focus, button:focus {
-  @apply outline-none
-}
+  a:focus, button:focus {
+    @apply outline-none
+  }
 
-p {
-  @apply text-base font-light leading-relaxed mt-0 mb-4
-}
+  p {
+    @apply text-base font-light leading-relaxed mt-0 mb-4
+  }
 
-h1, h2, h3, h4, h5, h6 {
-  @apply font-normal leading-normal mt-0 mb-2 /*font-heading*/
-}
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-normal leading-normal mt-0 mb-2 /*font-heading*/
+  }
 
-h1 {
-  @apply text-6xl
-}
+  h1 {
+    @apply text-6xl
+  }
 
-h2 {
-  @apply text-5xl
-}
+  h2 {
+    @apply text-5xl
+  }
 
-h3 {
-  @apply text-4xl
-}
+  h3 {
+    @apply text-4xl
+  }
 
-h4 {
-  @apply text-3xl
-}
+  h4 {
+    @apply text-3xl
+  }
 
-h5 {
-  @apply text-2xl
-}
+  h5 {
+    @apply text-2xl
+  }
 
-h5 {
-  @apply text-xl
+  h5 {
+    @apply text-xl
+  }
 }
