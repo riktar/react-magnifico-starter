@@ -8,7 +8,7 @@
 
 @layer base {
   body {
-    @apply text-gray-700 font-light text-base /*font-body*/
+    @apply text-gray-700 font-light text-base /*font-body*/ bg-gray-200
   }
 
   a, button {
@@ -24,7 +24,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-normal leading-normal mt-0 mb-2 /*font-heading*/
+    @apply font-normal leading-normal /*font-heading*/
   }
 
   h1 {

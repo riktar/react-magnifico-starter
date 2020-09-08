@@ -23,16 +23,16 @@ const Button: React.FC<Props> = ({
                                    ...props
                                  }) => {
   return (
-    <button onClick={props.onClick} style={{'transition': 'all .15s ease', ...props.style}}
-            className={classnames(`font-bold outline-none focus:outline-none ${props.className}`, {
-              "hover:underline": variant === 'text',
-              "text-primary-500": variant === 'text' && color === 'primary',
-              "text-secondary-500": variant === 'text' && color === 'secondary',
-              "text-green-500": variant === 'text' && color === 'success',
-              "text-yellow-500": variant === 'text' && color === 'warning',
-              "text-red-500": variant === 'text' && color === 'error',
+    <button onClick={props.onClick} style={{...props.style}}
+            className={classnames(`font-bold outline-none focus:outline-none transition duration-150 ease-in-out ${props.className}`, {
+              "": variant === 'text',
+              "hover:text-primary-500": variant === 'text' && color === 'primary',
+              "hover:text-secondary-500": variant === 'text' && color === 'secondary',
+              "hover:text-green-500": variant === 'text' && color === 'success',
+              "hover:text-yellow-500": variant === 'text' && color === 'warning',
+              "hover:text-red-500": variant === 'text' && color === 'error',
 
-              "py-3 px-6": variant === 'bordered' || variant === 'contained',
+              "px-3 py-2 leading-5": variant === 'bordered' || variant === 'contained',
 
               "border-solid border": variant === 'bordered',
               "border-primary-500 text-primary-500 active:bg-primary-200": variant === 'bordered' && color === 'primary',
