@@ -18,8 +18,8 @@ export const snapshot = {
   layout: {
     sidebar: {
       open: (window.innerWidth > 700),
-      width: (window.innerWidth > 700) ? 200 : 80,
-      openedWidth: 200,
+      width: (window.innerWidth > 700) ? 260 : 80,
+      openedWidth: 260,
       collapsedWidth: 80,
       responsive: '80vw',
     }

@@ -1,24 +1,22 @@
 import React from 'react';
-import Navbar from "../components/organisms/Navbar";
-import {useStore} from "../models/Store";
 import {observer} from "mobx-react-lite";
-import Sidebar from "../components/organisms/Sidebar";
-import Button from "../components/atoms/Button";
+import AdminTemplate from "../components/templates/AdminTemplate";
+import {Route, Switch, useRouteMatch} from "react-router";
+import AdminDashboard from "./admin/dashboard";
 
 const Admin: React.FC = observer(() => {
-  const {layout} = useStore()
+  let {path, url} = useRouteMatch();
   return (
-    <>
-      <Sidebar/>
-      <div className="transition-all ease-in-out duration-150 relative"
-           style={{paddingLeft: layout.calculate()}}>
-        <Navbar/>
-
-        <div className="flex p-3">
-          <Button className="text-white" variant={'contained'} color={'primary'}>Ciao</Button>
-        </div>
-      </div>
-    </>
+    <AdminTemplate>
+      <Switch>
+        <Route exact path={'/admin'}>
+          <AdminDashboard/>
+        </Route>
+        <Route exact path={`${path}/:topicId`}>
+          <h3>Ciao peppe</h3>
+        </Route>
+      </Switch>
+    </AdminTemplate>
   );
 })
 

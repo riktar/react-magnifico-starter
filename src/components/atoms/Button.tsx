@@ -9,6 +9,7 @@ interface Props {
   rounded?: boolean,
   shadow?: boolean,
   className?: string,
+  classNameContent?: string,
   onClick?: any,
   style?: any,
   children: any
@@ -24,7 +25,7 @@ const Button: React.FC<Props> = ({
                                  }) => {
   return (
     <button onClick={props.onClick} style={{...props.style}}
-            className={classnames(`font-bold outline-none focus:outline-none transition duration-150 ease-in-out ${props.className}`, {
+            className={classnames(`outline-none focus:outline-none transition duration-150 ease-in-out text-center ${props.className ?? ''}`, {
               "": variant === 'text',
               "hover:text-primary-500": variant === 'text' && color === 'primary',
               "hover:text-secondary-500": variant === 'text' && color === 'secondary',
@@ -56,7 +57,7 @@ const Button: React.FC<Props> = ({
               "text-xl": size === 'lg',
               "text-3xl": size === 'xl',
             })}>
-      {props.children}
+      <div className={classnames(`flex items-center ${props.classNameContent ?? ''}`, {})}>{props.children}</div>
     </button>
   )
 }
@@ -66,6 +67,7 @@ Button.propTypes = {
   color: PropTypes.string,
   variant: PropTypes.string,
   className: PropTypes.string,
+  classNameContent: PropTypes.string,
   rounded: PropTypes.bool,
   shadow: PropTypes.bool,
   onClick: PropTypes.func,

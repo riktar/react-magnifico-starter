@@ -14,7 +14,6 @@ const Layout = types
   }))
   .views(self => ({
     calculate() {
-      console.log((window.innerWidth > 700) ? self.sidebar.width : (self.sidebar.open) ? self.sidebar.responsive : 0)
       return (window.innerWidth > 700) ? self.sidebar.width : (self.sidebar.open) ? self.sidebar.responsive : 0
     }
   }));

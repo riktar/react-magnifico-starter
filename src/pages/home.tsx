@@ -11,7 +11,7 @@ const Home: React.FC = () => {
         <p>React Hooks + TypeScript + MobX + Tailwind = ️<span role='img' aria-label={'rocket'}>🚀</span></p>
 
         <div className="mt-10">
-          <Button color={'secondary'} variant={'bordered'} onClick={() => history.push('about')}>About</Button>
+          <Button color={'secondary'} variant={'bordered'} onClick={() => history.push('admin')}>Admin UI Example</Button>
         </div>
 
       </div>

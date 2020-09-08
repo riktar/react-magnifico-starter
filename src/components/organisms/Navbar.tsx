@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
               onClick={() => layout.toggleSidebar()}
               className="inline-flex items-center justify-center hover:text-secondary-500"
               aria-label="Main menu" aria-expanded="false">
-              <Menu />
+              <Menu/>
             </Button>
           </div>
 
@@ -47,8 +47,9 @@ const Navbar: React.FC = () => {
             </div>
           </div>
 
-          {window.innerWidth > 700
-            ?
+          {window.innerWidth < 700 && layout.sidebar.open
+            ? null
+            :
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               <Button
                 color={'secondary'}
@@ -68,7 +69,7 @@ const Navbar: React.FC = () => {
                   }/>
               </div>
             </div>
-            : null}
+          }
 
         </div>
       </div>
