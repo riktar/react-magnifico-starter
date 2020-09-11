@@ -2,8 +2,6 @@ import {types} from "mobx-state-tree";
 import Counter from "./Counter";
 import Layout from "./Layout";
 
-console.log(window.innerWidth > 0)
-
 // Root Model
 export const RootModel = types.model({
   counter: Counter,

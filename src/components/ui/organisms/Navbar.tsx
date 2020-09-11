@@ -4,7 +4,7 @@ import Button from "../atoms/Button";
 import Dropdown from "../molecules/Dropdown";
 import {BellOutline, Menu, UserOutline} from "heroicons-react"
 import Box from "../atoms/Box";
-import {useStore} from "../../models/Store";
+import {useStore} from "../../../models/Store";
 
 const Navbar: React.FC = () => {
   const {layout} = useStore()

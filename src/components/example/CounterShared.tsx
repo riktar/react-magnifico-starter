@@ -1,8 +1,8 @@
 import React from "react";
 import {observer} from "mobx-react-lite";
 import {useStore} from "../../models/Store";
-import Button from "../atoms/Button";
-import Box from "../atoms/Box";
+import Button from "../ui/atoms/Button";
+import Box from "../ui/atoms/Box";
 
 const CounterShared: React.FC = observer(() => {
   const {counter} = useStore();

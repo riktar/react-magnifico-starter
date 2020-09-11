@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from "../organisms/Navbar";
-import {useStore} from "../../models/Store";
+import {useStore} from "../../../models/Store";
 import {observer} from "mobx-react-lite";
 import Sidebar from "../organisms/Sidebar";
 

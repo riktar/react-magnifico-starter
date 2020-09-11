@@ -1,6 +1,6 @@
 import React from 'react';
 import {observer} from "mobx-react-lite";
-import AdminTemplate from "../components/templates/AdminTemplate";
+import AdminTemplate from "../components/ui/templates/AdminTemplate";
 import {Route, Switch, useRouteMatch} from "react-router";
 import AdminDashboard from "./admin/dashboard";
 

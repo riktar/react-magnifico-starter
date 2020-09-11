@@ -1,6 +1,4 @@
 @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700');
-@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;700');
 
 @tailwind base;
 @tailwind components;
@@ -8,7 +6,7 @@
 
 @layer base {
   body {
-    @apply text-gray-700 font-light text-base /*font-body*/ bg-gray-200
+    @apply text-gray-800 font-light text-base font-sans bg-gray-300
   }
 
   a, button {
@@ -24,7 +22,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-normal leading-normal /*font-heading*/
+    @apply font-normal leading-normal
   }
 
   h1 {

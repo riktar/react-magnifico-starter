@@ -12,15 +12,15 @@ module.exports = {
     colors: {
       ...defaultTheme.colors,
       primary: {
-        100: '#ac50ff',
-        200: '#9c2eff',
-        300: '#8c0cff',
-        400: '#7b00e9',
-        500: '#6900c7',
-        600: '#5700a5',
-        700: '#450083',
-        800: '#330061',
-        900: '#21003f',
+        100: '#e7e9fd',
+        200: '#c8ccfb',
+        300: '#a8aff9',
+        400: '#8892f7',
+        500: '#6875f5',
+        600: '#4858f3',
+        700: '#283bf1',
+        800: '#0f23e8',
+        900: '#0d1ec8',
       },
       secondary: {
         100: '#43ffd9',
@@ -36,8 +36,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        heading: ["Poppins, Noto Color Emoji", "sans-serif"],
-        body: ["Overpass, Noto Color Emoji", "sans-serif"]
+        //heading: ["Khula, Noto Color Emoji", "sans-serif"],
+        //body: ["Overpass, Noto Color Emoji", "sans-serif"]
       }
     }
   },

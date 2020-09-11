@@ -1,63 +1,46 @@
 import React from 'react';
 import {useHistory} from "react-router-dom";
-import Box from "../../components/atoms/Box";
-import {UserOutline, CreditCardOutline} from "heroicons-react"
-import Button from "../../components/atoms/Button";
+import {ClockOutline, CreditCardOutline, ThumbUpOutline, UserGroupOutline} from "heroicons-react"
+import Button from "../../components/ui/atoms/Button";
+import StatsCard from "../../components/ui/molecules/StatsCard";
 
 const AdminDashboard: React.FC = () => {
   const history = useHistory()
   return (
     <div className="p-10">
       <h4 className="font-bold mb-3">Dashboard</h4>
-      <div className="grid md:grid-cols-4 sm:grid-cols-1 gap-4">
-        <Box rounded type={'paper'} elevation={'1'} padding={'2'}>
-          <div className='flex'>
-            <div className='flex w-2/6 justify-center'>
-              <CreditCardOutline className='w-16 h-16 text-gray-500'/>
-            </div>
-            <div className='ml-3 w-4/6 relative'>
-              <h5 className='text-gray-500 font-bold'>Account Balance</h5>
-              <p>1,000,000$</p>
-            </div>
-          </div>
-          <Button className='w-full mt-3 font-bold' size='sm' color={'primary'} classNameContent='justify-center'>VIEW ALL</Button>
-        </Box>
-        <Box rounded type={'paper'} elevation={'1'} padding={'2'}>
-          <div className='flex'>
-            <div className='flex w-2/6 justify-center'>
-              <CreditCardOutline className='w-16 h-16 text-gray-500'/>
-            </div>
-            <div className='ml-3 w-4/6 relative'>
-              <h5 className='text-gray-500 font-bold'>Account Balance</h5>
-              <p>1,000,000$</p>
-            </div>
-          </div>
-          <Button className='w-full mt-3 font-bold' size='sm' classNameContent='justify-center'>VIEW ALL</Button>
-        </Box>
-        <Box rounded type={'paper'} elevation={'1'} padding={'2'}>
-          <div className='flex'>
-            <div className='flex w-2/6 justify-center'>
-              <CreditCardOutline className='w-16 h-16 text-gray-500'/>
-            </div>
-            <div className='ml-3 w-4/6 relative'>
-              <h5 className='text-gray-500 font-bold'>Account Balance</h5>
-              <p>1,000,000$</p>
-            </div>
-          </div>
-          <Button className='w-full mt-3 font-bold' size='sm' classNameContent='justify-center'>VIEW ALL</Button>
-        </Box>
-        <Box rounded type={'paper'} elevation={'1'} padding={'2'}>
-          <div className='flex'>
-            <div className='flex w-2/6 justify-center'>
-              <CreditCardOutline className='w-16 h-16 text-gray-500'/>
-            </div>
-            <div className='ml-3 w-4/6 relative'>
-              <h5 className='text-gray-500 font-bold'>Account Balance</h5>
-              <p>1,000,000$</p>
-            </div>
-          </div>
-          <Button className='w-full mt-3 font-bold' size='sm' classNameContent='justify-center'>VIEW ALL</Button>
-        </Box>
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4">
+        <StatsCard
+          color={'primary'}
+          title={<>Account Balance</>}
+          value={<>35.670 €</>}
+          icon={<CreditCardOutline className='text-white h-8 w-8'/>}
+          footer={<Button color={'primary'} size={'sm'}>View All</Button>}
+        />
+        <StatsCard
+          color={'primary'}
+          title={<>Users Signed</>}
+          value={<>1.034</>}
+          icon={<UserGroupOutline className='text-white h-8 w-8'/>}
+          footer={<Button color={'primary'} size={'sm'}>View All</Button>}
+        />
+        <StatsCard
+          color={'red'}
+          title={<>Time Lost</>}
+          value={<>1h 34m</>}
+          icon={<ClockOutline className='text-white h-8 w-8'/>}
+          footer={<>
+            <Button color={'primary'} size={'sm'}>View All</Button>
+            <Button color={'error'} className='ml-3' size={'sm'}>Recovery</Button>
+          </>}
+        />
+        <StatsCard
+          color={'green'}
+          title={<>Task Done</>}
+          value={<>10</>}
+          icon={<ThumbUpOutline className='text-white h-8 w-8'/>}
+          footer={<Button color={'primary'} size={'sm'}>View All</Button>}
+        />
       </div>
 
     </div>

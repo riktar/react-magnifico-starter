@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types'
-import {useStore} from "../../models/Store";
+import {useStore} from "../../../models/Store";
 import {observer} from "mobx-react-lite";
 import Button from "../atoms/Button";
 import {ClockOutline, CreditCardOutline, HomeOutline, UsersOutline} from "heroicons-react";
@@ -37,7 +37,11 @@ const Sidebar: React.FC<Props> = observer(({...props}) => {
         <div className="flex relative items-center px-3 my-3">
           {
             layout.sidebar.open
-              ? <h4 className="font-bold flex-1 text-center">Magnifico</h4>
+              ?
+              <div className='flex items-center justify-center text-center flex-1'>
+                <span className="font-bold text-3xl">Magnifico</span>
+                <span className='bg-secondary-500 px-2 py-1 ml-2 rounded-lg text-xs'>Beta</span>
+              </div>
               : <h4 className="text-center font-bold flex-1">M</h4>
           }
         </div>
