@@ -33,7 +33,7 @@ const Button: React.FC<Props> = ({
               "hover:text-yellow-500": variant === 'text' && color === 'warning',
               "hover:text-red-500": variant === 'text' && color === 'error',
 
-              "px-3 py-2 leading-5": variant === 'bordered' || variant === 'contained',
+              "leading-5": variant === 'bordered' || variant === 'contained',
 
               "border-solid border": variant === 'bordered',
               "border-primary-500 text-primary-500 active:bg-primary-200": variant === 'bordered' && color === 'primary',
@@ -45,17 +45,18 @@ const Button: React.FC<Props> = ({
               "bg-primary-500 active:bg-primary-700": variant === 'contained' && color === 'primary',
               "bg-secondary-500 active:bg-secondary-700": variant === 'contained' && color === 'secondary',
               "bg-gray-300 active:bg-gray-400": variant === 'contained' && color === 'default',
-              "bg-green-500 active:bg-green-700": variant === 'contained' && color === 'success',
-              "bg-yellow-500 active:bg-yellow-700": variant === 'contained' && color === 'warning',
-              "bg-red-500 active:bg-red-700": variant === 'contained' && color === 'error',
+              "bg-green-500 active:bg-green-700 text-white": variant === 'contained' && color === 'success',
+              "bg-yellow-500 active:bg-yellow-700 ": variant === 'contained' && color === 'warning',
+              "bg-red-500 active:bg-red-700 text-white": variant === 'contained' && color === 'error',
 
               "shadow hover:shadow-lg": shadow,
-              "rounded": rounded,
+              "rounded-md": rounded,
 
-              "text-base": size === 'md',
-              "text-xs": size === 'sm',
-              "text-xl": size === 'lg',
-              "text-3xl": size === 'xl',
+              "text-base px-3 py-2": size === 'md',
+              "text-sm px-2 py-1": size === 'sm',
+              "text-xs px-2 py-1": size === 'xs',
+              "text-xl px-3 py-2": size === 'lg',
+              "text-3xl px-3 py-2": size === 'xl',
             })}>
       <div className={classnames(`flex items-center ${props.classNameContent ?? ''}`, {})}>{props.children}</div>
     </button>

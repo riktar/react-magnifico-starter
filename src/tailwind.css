@@ -49,3 +49,32 @@
     @apply text-xl
   }
 }
+
+.dx-g-bs4-table-container table {
+  @apply table-auto w-full
+}
+
+.dx-g-bs4-toolbar {
+  @apply pt-3 pb-0
+}
+.dx-g-bs4-toolbar input{
+  @apply border p-2 rounded
+}
+
+.dx-g-bs4-table-container thead {
+  @apply border-b
+}
+
+.dx-g-bs4-table-container thead .dx-g-bs4-header-cell {
+  @apply text-left py-4 px-2
+}
+
+.dx-g-bs4-table-container table tbody tr {
+  @apply border-b
+}
+.dx-g-bs4-table-container table tbody tr .dx-g-bs4-table-cell {
+  @apply text-left py-2 px-2
+}
+.dx-g-bs4-no-data-cell{
+ @apply text-center
+}

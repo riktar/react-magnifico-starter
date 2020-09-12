@@ -21,11 +21,11 @@ const StatsCard: React.FC<Props> = ({icon, title, value, footer, color = 'primar
           </div>
           : null}
         <div>
-          <h6 className='text-gray-600 leading-none mb-2'>{title}</h6>
-          <h4 className="font-bold leading-none">{value}</h4>
+          <h6 className='text-gray-600 leading-none mb-2 truncate'>{title}</h6>
+          <h4 className="font-bold leading-none truncate">{value}</h4>
         </div>
       </div>
-      <div className='bg-gray-100 py-3 px-5'>
+      <div className='bg-gray-100 py-3 px-5 truncate'>
         {footer}
       </div>
     </Box>

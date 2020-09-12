@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@devexpress/dx-core": "^2.7.1",
+    "@devexpress/dx-react-core": "^2.7.1",
+    "@devexpress/dx-react-grid": "^2.7.1",
+    "@devexpress/dx-react-grid-bootstrap4": "^2.7.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^10.4.9",
     "@testing-library/user-event": "^12.1.3",

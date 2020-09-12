@@ -11,7 +11,7 @@ interface Props {
 }
 
 
-const Sidebar: React.FC<Props> = observer(({...props}) => {
+const Sidebar: React.FC<Props> = observer(() => {
   const {layout} = useStore()
 
   const menuItems = [
@@ -31,7 +31,7 @@ const Sidebar: React.FC<Props> = observer(({...props}) => {
 
   return (
     <div
-      className="transition-all ease-in-out duration-150 h-full absolute z-10 left-0 inset-y-0 bg-gradient-to-t from-primary-500 to-primary-600 overflow-hidden text-white"
+      className="transition-all ease-in-out duration-150 h-full fixed z-10 left-0 inset-y-0 bg-gradient-to-t from-primary-500 to-primary-600 overflow-hidden text-white"
       style={{width: layout.calculate()}}>
       <div>
         <div className="flex relative items-center px-3 my-3">

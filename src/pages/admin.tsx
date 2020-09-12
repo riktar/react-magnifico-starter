@@ -5,11 +5,11 @@ import {Route, Switch, useRouteMatch} from "react-router";
 import AdminDashboard from "./admin/dashboard";
 
 const Admin: React.FC = observer(() => {
-  let {path, url} = useRouteMatch();
+  const {path} = useRouteMatch();
   return (
     <AdminTemplate>
       <Switch>
-        <Route exact path={'/admin'}>
+        <Route exact path={`${path}/`}>
           <AdminDashboard/>
         </Route>
         <Route exact path={`${path}/:topicId`}>
