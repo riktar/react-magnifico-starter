@@ -23,41 +23,67 @@ const Button: React.FC<Props> = ({
                                    rounded = false,
                                    ...props
                                  }) => {
+
+  const decorateButton = () => {
+    switch (variant) {
+      case 'text': {
+        return {
+          "hover:text-primary-500": color === 'primary',
+          "hover:text-secondary-500": color === 'secondary',
+          "hover:text-green-500": color === 'success',
+          "hover:text-yellow-500": color === 'warning',
+          "hover:text-red-500": color === 'error',
+          "text-base": size === 'md',
+          "text-sm": size === 'sm',
+          "text-xs": size === 'xs',
+          "text-xl": size === 'lg',
+          "text-3xl": size === 'xl',
+        }
+      }
+      case 'bordered': {
+        return {
+          "border-solid border": true,
+          "border-primary-500 text-primary-500 active:bg-primary-200": color === 'primary',
+          "border-secondary-500 text-secondary-500 active:bg-secondary-200": color === 'secondary',
+          "border-green-500 text-green-500 active:bg-green-200": color === 'success',
+          "border-yellow-500 text-yellow-500 active:bg-yellow-200": color === 'warning',
+          "border-red-500 text-red-500 active:bg-red-200": color === 'error',
+
+          "shadow hover:shadow-md": shadow,
+          "rounded-lg": rounded,
+
+          "text-base px-3 py-2": size === 'md',
+          "text-sm px-2 py-2": size === 'sm',
+          "text-xs py-1 px-2": size === 'xs',
+          "text-xl px-3 py-2": size === 'lg',
+          "text-3xl px-3 py-2": size === 'xl',
+        }
+      }
+      case 'contained': {
+        return {
+          "bg-primary-500 active:bg-primary-700": color === 'primary',
+          "bg-secondary-500 active:bg-secondary-700": color === 'secondary',
+          "bg-gray-300 active:bg-gray-400": color === 'default',
+          "bg-green-500 active:bg-green-700 text-white": color === 'success',
+          "bg-yellow-500 active:bg-yellow-700 ": color === 'warning',
+          "bg-red-500 active:bg-red-700 text-white": color === 'error',
+
+          "shadow hover:shadow-md": shadow,
+          "rounded-lg": rounded,
+
+          "text-base px-3 py-2": size === 'md',
+          "text-sm px-2 py-2": size === 'sm',
+          "text-xs py-1 px-2": size === 'xs',
+          "text-xl px-3 py-2": size === 'lg',
+          "text-3xl px-3 py-2": size === 'xl',
+        }
+      }
+    }
+  }
+
   return (
     <button onClick={props.onClick} style={{...props.style}}
-            className={classnames(`outline-none focus:outline-none transition duration-150 ease-in-out text-center ${props.className ?? ''}`, {
-              "": variant === 'text',
-              "hover:text-primary-500": variant === 'text' && color === 'primary',
-              "hover:text-secondary-500": variant === 'text' && color === 'secondary',
-              "hover:text-green-500": variant === 'text' && color === 'success',
-              "hover:text-yellow-500": variant === 'text' && color === 'warning',
-              "hover:text-red-500": variant === 'text' && color === 'error',
-
-              "leading-5": variant === 'bordered' || variant === 'contained',
-
-              "border-solid border": variant === 'bordered',
-              "border-primary-500 text-primary-500 active:bg-primary-200": variant === 'bordered' && color === 'primary',
-              "border-secondary-500 text-secondary-500 active:bg-secondary-200": variant === 'bordered' && color === 'secondary',
-              "border-green-500 text-green-500 active:bg-green-200": variant === 'bordered' && color === 'success',
-              "border-yellow-500 text-yellow-500 active:bg-yellow-200": variant === 'bordered' && color === 'warning',
-              "border-red-500 text-red-500 active:bg-red-200": variant === 'bordered' && color === 'error',
-
-              "bg-primary-500 active:bg-primary-700": variant === 'contained' && color === 'primary',
-              "bg-secondary-500 active:bg-secondary-700": variant === 'contained' && color === 'secondary',
-              "bg-gray-300 active:bg-gray-400": variant === 'contained' && color === 'default',
-              "bg-green-500 active:bg-green-700 text-white": variant === 'contained' && color === 'success',
-              "bg-yellow-500 active:bg-yellow-700 ": variant === 'contained' && color === 'warning',
-              "bg-red-500 active:bg-red-700 text-white": variant === 'contained' && color === 'error',
-
-              "shadow hover:shadow-lg": shadow,
-              "rounded-md": rounded,
-
-              "text-base px-3 py-2": size === 'md',
-              "text-sm px-2 py-1": size === 'sm',
-              "text-xs px-2 py-1": size === 'xs',
-              "text-xl px-3 py-2": size === 'lg',
-              "text-3xl px-3 py-2": size === 'xl',
-            })}>
+            className={classnames(`outline-none focus:outline-none transition duration-150 ease-in-out text-center ${props.className ?? ''}`, decorateButton())}>
       <div className={classnames(`flex items-center ${props.classNameContent ?? ''}`, {})}>{props.children}</div>
     </button>
   )

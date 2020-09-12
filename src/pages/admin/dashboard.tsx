@@ -8,13 +8,13 @@ import Box from "../../components/ui/atoms/Box";
 const AdminDashboard: React.FC = () => {
 
   const ActionCell = ({value, row}: columnInterface) => (
-    <div className={'flex justify-end'}>
+    <>
       <Button onClick={() => {
         console.log(value, row)
-      }} size={'sm'} variant={'contained'} color={'success'} className='mr-2' shadow
-              rounded>Accept</Button>
-      <Button size={'sm'} variant={'contained'} color={'error'} shadow rounded>Delete</Button>
-    </div>)
+      }} variant={'contained'} color={'success'} className='mr-2' shadow
+              rounded size={'xs'}>Accept</Button>
+      <Button variant={'contained'} color={'error'} size={'xs'} shadow rounded>Delete</Button>
+    </>)
 
   return (
     <div className="p-10">
