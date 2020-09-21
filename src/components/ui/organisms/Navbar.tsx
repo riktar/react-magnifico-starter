@@ -9,7 +9,7 @@ import {useStore} from "../../../models/Store";
 const Navbar: React.FC = () => {
   const {layout} = useStore()
   return (
-    <nav className="w-100 shadow bg-white">
+    <nav className="w-100 shadow bg-white fixed z-40 top-0" style={{width: `calc( 100% - ${layout.calculate()}px )`}}>
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
 
@@ -61,10 +61,11 @@ const Navbar: React.FC = () => {
               <div className="ml-3 relative">
                 <Dropdown
                   btnClass={"hover:text-secondary-500 border-2 border-transparent p-1"}
+                  dropClass={"w-48 origin-top-right right-0"}
                   trigger={<UserOutline/>}
                   menu={
                     <Box className="rounded-md bg-white" elevation={'1'}>
-                      <Button className={'py-2 px-4'} color={'secondary'}>Sign out</Button>
+                      <Button className='py-2 px-4 w-full' color={'secondary'}>Sign out</Button>
                     </Box>
                   }/>
               </div>

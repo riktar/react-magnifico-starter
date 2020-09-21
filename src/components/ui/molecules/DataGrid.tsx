@@ -29,16 +29,19 @@ import {
   Toolbar,
   VirtualTable
 } from '@devexpress/dx-react-grid-bootstrap4'
+import Skeleton from "react-loading-skeleton";
 
 
-export interface columnInterface{
+export interface providerInterface {
   value: any,
   row: any
 }
+
 interface Props {
   rows?: any,
   columns?: any,
   toolbar?: any,
+  loading?: boolean,
   search?: any,
   selection?: any,
   sorting?: any,
@@ -58,6 +61,7 @@ const DataGrid: React.FC<Props> = ({
                                      rows = [],
                                      columns = [],
                                      toolbar,
+                                     loading = false,
                                      search,
                                      selection,
                                      sorting,
@@ -76,66 +80,70 @@ const DataGrid: React.FC<Props> = ({
 
 
   return (
-    <>
-      <Grid
-        rows={rows}
-        columns={columns}
-        {...rest}
-      >
-        {providers.length > 0
-          ? providers.map((provider: any) => (
-              <DataTypeProvider
-                key={provider.for}
-                {...provider}
-              />
-            )
-          ) : null}
+    loading
+      ? <div className='px-2 py-5'>
+        <Skeleton count={1} height={50} className='my-2'/>
+      </div>
+      : <>
+        <Grid
+          rows={rows}
+          columns={columns}
+          {...rest}
+        >
+          {providers.length > 0
+            ? providers.map((provider: any) => (
+                <DataTypeProvider
+                  key={provider.for}
+                  {...provider}
+                />
+              )
+            ) : null}
 
-        <SelectionState {...selection} />
-        <SearchState {...search} />
-        <SortingState {...sorting} />
+          <SelectionState {...selection} />
+          <SearchState {...search} />
+          <SortingState {...sorting} />
 
-        {groupBy && <GroupingState
-          {...groupBy.groupingState}
-        />}
+          {groupBy && <GroupingState
+            {...groupBy.groupingState}
+          />}
 
-        {groupBy && <IntegratedGrouping/>}
+          {groupBy && <IntegratedGrouping/>}
 
-        <PagingState {...paging} />
+          <PagingState {...paging} />
 
-        {filters ? <FilteringState filters={filters}/> : null}
+          {filters ? <FilteringState filters={filters}/> : null}
 
-        {(search && !search.onValueChange) || (filters) ? <IntegratedFiltering columnExtensions={filters}/> : null}
-        {selection && selection.showSelectAll ? <IntegratedSelection/> : null}
-        {sorting && !sorting.onSortingChange ? <IntegratedSorting/> : null}
-        {paging && !paging.onCurrentPageChange ? <IntegratedPaging/> : <CustomPaging {...paging} />}
+          {(search && !search.onValueChange) || (filters) ? <IntegratedFiltering columnExtensions={filters}/> : null}
+          {selection && selection.showSelectAll ? <IntegratedSelection/> : null}
+          {sorting && !sorting.onSortingChange ? <IntegratedSorting/> : null}
+          {paging && !paging.onCurrentPageChange ? <IntegratedPaging/> : <CustomPaging {...paging} />}
 
-        {rowDetail && <RowDetailState
-          defaultExpandedRowIds={Array.isArray(rowDetail.defaultExpanded) && rowDetail.defaultExpanded.length > 0 ? rowDetail.defaultExpanded : []}
-        />}
+          {rowDetail && <RowDetailState
+            defaultExpandedRowIds={Array.isArray(rowDetail.defaultExpanded) && rowDetail.defaultExpanded.length > 0 ? rowDetail.defaultExpanded : []}
+          />}
 
-        <Table
-          {...table}
-        />
-        {(showColumnResizing && defaultColumnWidths.length > 0)
-          ? <TableColumnResizing defaultColumnWidths={defaultColumnWidths}/> : null}
-        {height ? <VirtualTable height={height}/> : null}
-        <TableHeaderRow
-          showSortingControls={sorting && sorting.showSortingControls}
-          {...tableHeaderRow}
-        />
+          <Table
+            {...table}
+          />
+          {(showColumnResizing && defaultColumnWidths.length > 0)
+            ? <TableColumnResizing defaultColumnWidths={defaultColumnWidths}/> : null}
+          {height ? <VirtualTable height={height}/> : null}
+          <TableHeaderRow
+            showSortingControls={sorting && sorting.showSortingControls}
+            {...tableHeaderRow}
+          />
 
-        {rowDetail && <TableRowDetail
-          contentComponent={(el) => rowDetail.callback(el)}
-        />}
+          {rowDetail && <TableRowDetail
+            contentComponent={(el) => rowDetail.callback(el)}
+          />}
 
-        {(search || toolbar) && <Toolbar/>}
-        {search && <SearchPanel/>}
-        {selection && <TableSelection {...selection} />}
-        {groupBy && <TableGroupRow {...groupBy.tableGroupRow} />}
-        {paging && <PagingPanel {...paging} />}
-      </Grid>
-    </>
+          {(search || toolbar) && <Toolbar/>}
+          {search && <SearchPanel/>}
+          {selection && <TableSelection {...selection} />}
+          {groupBy && <TableGroupRow {...groupBy.tableGroupRow} />}
+          {paging && <PagingPanel {...paging} />}
+        </Grid>
+      </>
   )
 }
 
@@ -148,6 +156,7 @@ DataGrid.propTypes = {
   height: PropTypes.number,
   rows: PropTypes.array,
   columns: PropTypes.array,
+  loading: PropTypes.bool,
   providers: PropTypes.array,
   filters: PropTypes.array,
   groupBy: PropTypes.object,

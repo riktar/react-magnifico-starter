@@ -9,11 +9,11 @@
     @apply text-gray-800 font-light text-base font-sans bg-gray-300
   }
 
-  a, button {
+  a, button, input, select {
     @apply outline-none
   }
 
-  a:focus, button:focus {
+  a:focus, button:focus, input:focus, select:focus {
     @apply outline-none
   }
 
@@ -55,10 +55,10 @@
 }
 
 .dx-g-bs4-toolbar {
-  @apply pt-3 pb-0
+  @apply pt-3 pb-0 flex justify-end
 }
 .dx-g-bs4-toolbar input{
-  @apply border p-2 rounded
+  @apply border py-2 px-3 rounded-lg
 }
 
 .dx-g-bs4-table-container thead {
@@ -66,11 +66,14 @@
 }
 
 .dx-g-bs4-table-container thead .dx-g-bs4-header-cell {
-  @apply text-left py-4 px-2
+  @apply text-left py-3 px-2
 }
 
 .dx-g-bs4-table-container table tbody tr {
   @apply border-b
+}
+.dx-g-bs4-table-container table tbody tr:last-child {
+  @apply border-none
 }
 .dx-g-bs4-table-container table tbody tr .dx-g-bs4-table-cell {
   @apply text-left py-2 px-2
@@ -78,3 +81,23 @@
 .dx-g-bs4-no-data-cell{
  @apply text-center
 }
+.dx-g-bs4-paging-panel{
+  @apply flex justify-end items-center mt-3
+}
+.dx-g-bs4-paging-panel nav{
+  @apply flex w-full
+}
+.dx-g-bs4-paging-panel .d-sm-none{
+  display:none
+}
+.dx-g-bs4-paging-panel nav ul{
+  @apply flex w-full
+}
+.dx-g-bs4-paging-panel nav ul .page-item .page-link{
+  @apply mx-1 border py-1 px-2
+}
+.dx-g-bs4-paging-panel nav ul .page-item.active .page-link{
+  @apply bg-gray-200
+}
+
+

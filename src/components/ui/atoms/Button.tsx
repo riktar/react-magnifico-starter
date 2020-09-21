@@ -38,6 +38,8 @@ const Button: React.FC<Props> = ({
           "text-xs": size === 'xs',
           "text-xl": size === 'lg',
           "text-3xl": size === 'xl',
+
+          "rounded-lg": rounded,
         }
       }
       case 'bordered': {
