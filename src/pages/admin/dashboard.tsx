@@ -42,8 +42,8 @@ const AdminDashboard: React.FC = observer(() => {
         <h5 className="font-bold pr-5 border-r mr-5">Dashboard</h5>
         <span>A short description</span>
         <div className='md:flex hidden'>
-          <Button size={'sm'} color={'success'} variant={'bordered'} className='ml-3'>Rapid Action</Button>
-          <Button size={'sm'} color={'error'} variant={'bordered'} className='ml-3'>Another rapid action</Button>
+          <Button size={'xs'} color={'success'} variant={'bordered'} className='ml-3'>Rapid Action</Button>
+          <Button size={'xs'} color={'error'} variant={'bordered'} className='ml-3'>Another rapid action</Button>
         </div>
       </Box>
       <div className="p-10">
