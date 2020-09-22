@@ -25,7 +25,9 @@ const AdminDashboard: React.FC = observer(() => {
   const ActionCell = ({value, row}: providerInterface) => (
     <MoreMenu
       actions={[
-        <Button key={'detail'} className='w-full mb-3' color={'secondary'}>
+        <Button onClick={() => {
+          console.log(value, row)
+        }} key={'detail'} className='w-full mb-3' color={'secondary'}>
           <SearchOutline className='mr-5'/>
           <span>Detail very long</span>
         </Button>,

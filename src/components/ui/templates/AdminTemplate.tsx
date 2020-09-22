@@ -3,7 +3,6 @@ import Navbar from "../organisms/Navbar";
 import {useStore} from "../../../models/Store";
 import {observer} from "mobx-react-lite";
 import Sidebar from "../organisms/Sidebar";
-import Button from "../atoms/Button";
 import Box from "../atoms/Box";
 
 const AdminTemplate: React.FC = observer(({...props}) => {

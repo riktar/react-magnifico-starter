@@ -5,7 +5,6 @@ const App = types
   .model({
     dashboard: Dashboard
   })
-  .actions(self => ({}));
 
 
 export default App
