@@ -5,7 +5,8 @@ import {
   SearchOutline,
   ThumbUpOutline,
   TrashOutline,
-  UserGroupOutline
+  UserGroupOutline,
+  DotsVertical
 } from "heroicons-react"
 import Button from "../../components/ui/atoms/Button";
 import StatsCard from "../../components/ui/molecules/StatsCard";
@@ -24,6 +25,7 @@ const AdminDashboard: React.FC = observer(() => {
 
   const ActionCell = ({value, row}: providerInterface) => (
     <MoreMenu
+      icon={<DotsVertical/>}
       actions={[
         <Button onClick={() => {
           console.log(value, row)
@@ -88,7 +90,7 @@ const AdminDashboard: React.FC = observer(() => {
             <DataGrid
               paging={{
                 defaultCurrentPage: 0,
-                defaultPageSize: 8
+                defaultPageSize: 6
               }}
               loading={dashboard.users.loading}
               columns={[

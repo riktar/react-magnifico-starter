@@ -25,7 +25,7 @@ const Box: React.FC<Props> = ({
                               }) => {
   return (
     <div
-            className={classnames(`${props.className ?? ''} overflow-auto`, {
+            className={classnames(`${props.className ?? ''} overflow-auto relative`, {
               "bg-red-100 border-red-400 text-red-600": type === 'error',
               "bg-yellow-100 border-yellow-400 text-yellow-600": type === 'warning',
               "bg-green-100 border-green-400 text-green-600": type === 'success',
