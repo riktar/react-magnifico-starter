@@ -10,7 +10,7 @@ interface Props {
   color: string,
 }
 
-const StatsCard: React.FC<Props> = ({icon, title, value, footer, color = 'primary'}) => {
+const StatsCard: React.FC<Props> = ({icon, title, value, footer = null, color = 'primary'}) => {
 
   return (
     <Box rounded type={'paper'} elevation={'1'}>
@@ -25,9 +25,13 @@ const StatsCard: React.FC<Props> = ({icon, title, value, footer, color = 'primar
           <h4 className="font-bold leading-none truncate">{value}</h4>
         </div>
       </div>
-      <div className='bg-gray-100 py-3 px-5 truncate rounded-b-lg'>
-        {footer}
-      </div>
+      {
+        footer
+          ? <div className='bg-gray-100 py-3 px-5 truncate rounded-b-lg'>
+            {footer}
+          </div>
+          : null
+      }
     </Box>
   );
 }
