@@ -3,9 +3,9 @@ import Box from "../atoms/Box";
 import PropTypes from "prop-types";
 
 interface Props {
-  icon: any,
+  icon?: any,
   title: any,
-  footer: any,
+  footer?: any,
   value: any
   color: string,
 }
