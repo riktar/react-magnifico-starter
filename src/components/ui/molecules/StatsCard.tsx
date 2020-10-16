@@ -10,7 +10,7 @@ interface Props {
   color: string,
 }
 
-const StatsCard: React.FC<Props> = ({icon, title, value, footer = null, color = 'primary'}) => {
+const StatsCard: React.FC<Props> = ({icon = null, title, value, footer = null, color = 'primary'}) => {
 
   return (
     <Box rounded type={'paper'} elevation={'1'}>
