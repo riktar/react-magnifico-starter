@@ -1,6 +1,8 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const windmill = require('@windmill/react-ui/config')
 
-module.exports = {
+
+module.exports = windmill({
   purge: [
     'src/**/*.js',
     'src/**/*.jsx',
@@ -46,4 +48,4 @@ module.exports = {
     textColor: ['responsive', 'hover', 'focus', 'active'],
   },
   plugins: []
-}
+})

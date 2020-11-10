@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Button from "../atoms/Button";
+import CustomButton from "../atoms/CustomButton";
 import Dropdown from "../molecules/Dropdown";
 import {BellOutline, Menu, UserOutline} from "heroicons-react"
 import Box from "../atoms/Box";
@@ -14,35 +14,35 @@ const Navbar: React.FC = () => {
         <div className="relative flex items-center justify-between h-16">
 
           <div className="absolute inset-y-0 left-0 ml-5 flex items-center sm:hidden">
-            <Button
+            <CustomButton
               onClick={() => layout.toggleSidebar()}
               className="inline-flex items-center justify-center hover:text-secondary-500"
               aria-label="Main menu" aria-expanded="false">
               <Menu/>
-            </Button>
+            </CustomButton>
           </div>
 
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <div className="hidden sm:block">
               <div className="flex">
-                <Button
+                <CustomButton
                   color={'secondary'}
                   className="mr-10"
                   onClick={() => layout.toggleSidebar()}
                 >
                   <Menu/>
-                </Button>
-                <Button
+                </CustomButton>
+                <CustomButton
                   color={'secondary'}
-                  className="mr-10">Dashboard</Button>
-                <Button
+                  className="mr-10">Dashboard</CustomButton>
+                <CustomButton
                   color={'secondary'}
-                  className="mr-10">Team</Button>
-                <Button
+                  className="mr-10">Team</CustomButton>
+                <CustomButton
                   color={'secondary'}
-                  className="mr-10">Project</Button>
-                <Button
-                  color={'secondary'}>Calendar</Button>
+                  className="mr-10">Project</CustomButton>
+                <CustomButton
+                  color={'secondary'}>Calendar</CustomButton>
               </div>
             </div>
           </div>
@@ -51,12 +51,12 @@ const Navbar: React.FC = () => {
             ? null
             :
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-              <Button
+              <CustomButton
                 color={'secondary'}
                 className="border-2 border-transparent p-1"
                 aria-label="Notifications">
                 <BellOutline/>
-              </Button>
+              </CustomButton>
 
               <div className="ml-3 relative">
                 <Dropdown
@@ -65,7 +65,7 @@ const Navbar: React.FC = () => {
                   trigger={<UserOutline/>}
                   menu={
                     <Box className="rounded-md bg-white" elevation={'1'}>
-                      <Button className='py-2 px-4 w-full' color={'secondary'}>Sign out</Button>
+                      <CustomButton className='py-2 px-4 w-full' color={'secondary'}>Sign out</CustomButton>
                     </Box>
                   }/>
               </div>

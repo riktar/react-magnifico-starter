@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from "react";
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import Button from "../atoms/Button";
+import CustomButton from "../atoms/CustomButton";
 
 interface Props {
   trigger: any,
@@ -46,9 +46,9 @@ const Dropdown: React.FC<Props> = ({
 
   return (
     <div className="relative" ref={myRef}>
-      <Button className={classnames(`${props.btnClass}`, {})} onClick={() => setOpen(!open)}>
+      <CustomButton className={classnames(`${props.btnClass}`, {})} onClick={() => setOpen(!open)}>
         {props.trigger}
-      </Button>
+      </CustomButton>
 
       <div className={classnames(`${props.dropClass} absolute z-50 rounded-lg shadow-lg`, {
         'block': open,

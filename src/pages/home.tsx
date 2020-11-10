@@ -1,6 +1,6 @@
 import React from 'react';
 import {useHistory} from "react-router-dom";
-import Button from "../components/ui/atoms/Button";
+import CustomButton from "../components/ui/atoms/CustomButton";
 
 const Home: React.FC = () => {
   const history = useHistory()
@@ -11,7 +11,7 @@ const Home: React.FC = () => {
         <p>React Hooks + TypeScript + MobX + Tailwind = ️<span role='img' aria-label={'rocket'}>🚀</span></p>
 
         <div className="mt-10">
-          <Button color={'secondary'} variant={'bordered'} onClick={() => history.push('admin')}>Admin UI Example</Button>
+          <CustomButton color={'secondary'} variant={'bordered'} onClick={() => history.push('admin')}>Admin UI Example</CustomButton>
         </div>
 
       </div>

@@ -8,7 +8,7 @@ import {
   UserGroupOutline,
   DotsVertical
 } from "heroicons-react"
-import Button from "../../components/ui/atoms/Button";
+import CustomButton from "../../components/ui/atoms/CustomButton";
 import StatsCard from "../../components/ui/molecules/StatsCard";
 import DataGrid, {providerInterface} from "../../components/ui/molecules/DataGrid";
 import Box from "../../components/ui/atoms/Box";
@@ -27,16 +27,16 @@ const AdminDashboard: React.FC = observer(() => {
     <MoreMenu
       icon={<DotsVertical/>}
       actions={[
-        <Button onClick={() => {
+        <CustomButton onClick={() => {
           console.log(value, row)
         }} key={'detail'} className='w-full mb-3' color={'secondary'}>
           <SearchOutline className='mr-5'/>
           <span>Detail very long</span>
-        </Button>,
-        <Button key={'detail'} className='w-full' color={'error'}>
+        </CustomButton>,
+        <CustomButton key={'detail'} className='w-full' color={'error'}>
           <TrashOutline className='mr-5'/>
           <span>Remove</span>
-        </Button>,
+        </CustomButton>,
       ]}/>
   )
 
@@ -46,8 +46,8 @@ const AdminDashboard: React.FC = observer(() => {
         <h5 className="font-bold pr-5 border-r mr-5">Dashboard</h5>
         <span>A short description</span>
         <div className='md:flex hidden'>
-          <Button size={'xs'} color={'success'} variant={'bordered'} className='ml-3'>Rapid Action</Button>
-          <Button size={'xs'} color={'error'} variant={'bordered'} className='ml-3'>Another rapid action</Button>
+          <CustomButton size={'xs'} color={'success'} variant={'bordered'} className='ml-3'>Rapid Action</CustomButton>
+          <CustomButton size={'xs'} color={'error'} variant={'bordered'} className='ml-3'>Another rapid action</CustomButton>
         </div>
       </Box>
       <div className="p-10">
@@ -57,14 +57,14 @@ const AdminDashboard: React.FC = observer(() => {
             title={<>Account Balance</>}
             value={<>35.670 €</>}
             icon={<CreditCardOutline className='text-white h-8 w-8'/>}
-            footer={<Button color={'primary'} size={'sm'}>View All</Button>}
+            footer={<CustomButton color={'primary'} size={'sm'}>View All</CustomButton>}
           />
           <StatsCard
             color={'blue'}
             title={<>Users Signed</>}
             value={<>1.034</>}
             icon={<UserGroupOutline className='text-white h-8 w-8'/>}
-            footer={<Button color={'primary'} size={'sm'}>View All</Button>}
+            footer={<CustomButton color={'primary'} size={'sm'}>View All</CustomButton>}
           />
           <StatsCard
             color={'red'}
@@ -72,8 +72,8 @@ const AdminDashboard: React.FC = observer(() => {
             value={<>1h 34m</>}
             icon={<ClockOutline className='text-white h-8 w-8'/>}
             footer={<>
-              <Button color={'primary'} size={'sm'}>View All</Button>
-              <Button color={'error'} className='ml-3' size={'sm'}>Recovery</Button>
+              <CustomButton color={'primary'} size={'sm'}>View All</CustomButton>
+              <CustomButton color={'error'} className='ml-3' size={'sm'}>Recovery</CustomButton>
             </>}
           />
           <StatsCard
@@ -81,7 +81,7 @@ const AdminDashboard: React.FC = observer(() => {
             title={<>Task Done</>}
             value={<>10</>}
             icon={<ThumbUpOutline className='text-white h-8 w-8'/>}
-            footer={<Button color={'primary'} size={'sm'}>View All</Button>}
+            footer={<CustomButton color={'primary'} size={'sm'}>View All</CustomButton>}
           />
         </div>
 

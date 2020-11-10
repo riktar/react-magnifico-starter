@@ -2,8 +2,9 @@ import React from "react";
 import PropTypes from 'prop-types'
 import {useStore} from "../../../models/Store";
 import {observer} from "mobx-react-lite";
-import Button from "../atoms/Button";
+import CustomButton from "../atoms/CustomButton";
 import {ClockOutline, CreditCardOutline, HomeOutline, UsersOutline} from "heroicons-react";
+import {Badge} from "@windmill/react-ui";
 
 interface Props {
   className?: string,
@@ -39,22 +40,22 @@ const Sidebar: React.FC<Props> = observer(() => {
             layout.sidebar.open
               ?
               <div className='flex items-center justify-center text-center flex-1'>
-                <span className="font-bold text-3xl">Magnifico</span>
-                <span className='bg-secondary-500 px-2 py-1 ml-2 rounded-lg text-xs'>Beta</span>
+                <span className="font-bold text-3xl mr-2">Magnifico</span>
+                <Badge type={"success"}>Beta</Badge>
               </div>
               : <h4 className="text-center font-bold flex-1">M</h4>
           }
         </div>
         <div className="flex flex-col relative px-3">
           {layout.sidebar.open ? <h6 className='text-xs font-bold my-3 pl-3'>GENERAL</h6> : null}
-          {menuItems.map((item, key) => <Button key={key} size={'sm'} className='hover:bg-primary-800 mb-2' rounded
-                                                classNameContent={`p-2 ${(!layout.sidebar.open) ? ' justify-center' : ''}`}>{item}
-          </Button>)}
+          {menuItems.map((item, key) => <CustomButton key={key} size={'sm'} className='hover:bg-primary-800 mb-2' rounded
+                                                      classNameContent={`p-2 ${(!layout.sidebar.open) ? ' justify-center' : ''}`}>{item}
+          </CustomButton>)}
           <hr className='my-5'/>
           {layout.sidebar.open ? <h6 className='text-xs p-3 font-bold'>OTHER MENU</h6> : null}
-          {menuItems.map((item, key) => <Button key={key} size={'sm'} className='hover:bg-primary-800 mb-2' rounded
-                                                classNameContent={`p-2 ${(!layout.sidebar.open) ? ' justify-center' : ''}`}>{item}
-          </Button>)}
+          {menuItems.map((item, key) => <CustomButton key={key} size={'sm'} className='hover:bg-primary-800 mb-2' rounded
+                                                      classNameContent={`p-2 ${(!layout.sidebar.open) ? ' justify-center' : ''}`}>{item}
+          </CustomButton>)}
         </div>
 
       </div>

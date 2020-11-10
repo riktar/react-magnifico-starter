@@ -15,7 +15,7 @@ interface Props {
   children: any
 }
 
-const Button: React.FC<Props> = ({
+const CustomButton: React.FC<Props> = ({
                                    size = 'md',
                                    color = 'default',
                                    variant = 'text',
@@ -91,7 +91,7 @@ const Button: React.FC<Props> = ({
   )
 }
 
-Button.propTypes = {
+CustomButton.propTypes = {
   size: PropTypes.string,
   color: PropTypes.string,
   variant: PropTypes.string,
@@ -104,6 +104,6 @@ Button.propTypes = {
   style: PropTypes.any,
 }
 
-Button.defaultProps = {}
+CustomButton.defaultProps = {}
 
-export default Button;
+export default CustomButton;
